@@ -1,5 +1,5 @@
 import Layout from './hoc/Layout/Layout'
-import Quize from './container/Quize/Quize';
+import Quize from './container/Quiz/Quiz';
 
 function App() {
   return (

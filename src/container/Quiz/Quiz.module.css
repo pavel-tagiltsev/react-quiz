@@ -1,4 +1,4 @@
-.Quize {
+.Quiz {
   display: flex;
   justify-content: center;
   flex-grow: 1;
@@ -7,6 +7,11 @@
   background: linear-gradient(90deg, #5041b2 0%, #7969e6 100%);
 }
 
-.Quize h1 {
+.Quiz h1 {
+  margin-left: 10px;
   color: #ffffff;
+}
+
+.QuizWrapper {
+  width: 70%;
 }
