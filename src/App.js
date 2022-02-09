@@ -1,10 +1,11 @@
 import Layout from './hoc/Layout/Layout'
+import Quize from './container/Quize/Quize';
 
 function App() {
   return (
     <div className="App">
       <Layout>
-        <h1>Hello React</h1>
+        <Quize />
       </Layout>
     </div>
   );
