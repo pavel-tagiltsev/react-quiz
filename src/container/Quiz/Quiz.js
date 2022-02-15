@@ -1,9 +1,11 @@
 import { Component } from "react"
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
+import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
 import classes from './Quiz.module.css'
 
 class Quiz extends Component {
   state = {
+    isFinished: true,
     activeQuestion: 0,
     answerState: null,
     quiz: [
@@ -49,7 +51,7 @@ class Quiz extends Component {
       
       const timeout = window.setTimeout(() => {
         if (this.isQuizFinished()) {
-          console.log('The end')
+          this.setState({isFinished: true})
         } else {
           this.setState({
             activeQuestion: this.state.activeQuestion + 1,
@@ -75,7 +77,10 @@ class Quiz extends Component {
       <div className={classes.Quiz}>
         <div className={classes.QuizWrapper}>
           <h1>Ответьте на все вопросы</h1>
-            <ActiveQuiz 
+          {
+            this.state.isFinished 
+              ? <FinishedQuiz />
+              : <ActiveQuiz 
               answers={this.state.quiz[this.state.activeQuestion].answers}
               question={this.state.quiz[this.state.activeQuestion].question}
               answerClickHandler={this.answerClickHandler}
@@ -83,6 +88,7 @@ class Quiz extends Component {
               answerNumber={this.state.activeQuestion + 1}
               answerState={this.state.answerState}
             />
+          }
         </div>
       </div>
     )  
