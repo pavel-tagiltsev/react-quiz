@@ -1,9 +1,15 @@
 import classes from './AnswersItem.module.css'
 
 const AnswersItem = (props) => {
+  const cls = [classes.AnswersItem]
+ 
+  if (props.answerState) {
+    cls.push(classes[props.answerState])
+  }
+
   return (
     <li 
-      className={classes.AnswersItem}
+      className={cls.join(' ')}
       onClick={() => props.answerClickHandler(props.answer.id)}>
       {props.answer.text}
     </li>
