@@ -5,7 +5,7 @@ import QuizList from './container/QuizList/QuizList';
 import QuizCreator from './container/QuizCreator/QuizCreator';
 import Auth from './container/Auth/Auth';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Layout>

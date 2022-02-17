@@ -1,6 +1,7 @@
 import { Component } from "react"
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
+import withRouter from '../../components/Helpers/withRouter'
 import classes from './Quiz.module.css'
 
 class Quiz extends Component {
@@ -117,4 +118,4 @@ class Quiz extends Component {
   }
 }
 
-export default Quiz;
+export default withRouter(Quiz);
