@@ -7,7 +7,11 @@ function isInvalid({valid, touched, shouldValidate}) {
 const Input = (props) => {
   const inputType = props.type || 'text'
   const cls = [classes.Input]
-  const htmlFor = `${props.type}-${Math.round()}`
+  const htmlFor = `${inputType}-${Math.random()}`
+
+  if (isInvalid(props)) {
+    cls.push(classes.invalid)
+  }
 
   return (
     <div className={cls.join(' ')}>
