@@ -3,6 +3,7 @@ import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
 import Input from '../../components/UI/Input/Input'
 import is from 'is_js'
+import axios from 'axios'
 
 export default class Auth extends Component {
   state = {
@@ -45,6 +46,12 @@ export default class Auth extends Component {
 
   submitHandler = (evt) => {
     evt.preventDefault()
+  }
+
+  componentDidMount() {
+    axios.get('https://react-quiz-18612-default-rtdb.europe-west1.firebasedatabase.app/quiz.json').then((response) => {
+      console.log(response)
+    })
   }
 
   validateControl(value, validation) {
