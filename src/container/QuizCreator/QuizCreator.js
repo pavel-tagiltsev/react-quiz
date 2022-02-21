@@ -71,7 +71,7 @@ class QuizCreator extends Component {
     evt.preventDefault()
 
     this.props.createQuiz()
-    
+
     this.setState({
       isFormValid: false,
       rightAnswerId: 1,
@@ -175,11 +175,11 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToState(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     createQuizQuestion: (item) => dispatch(createQuizQuestion(item)),
     createQuiz: () => dispatch(createQuiz())
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToState)(QuizCreator)
+export default connect(mapStateToProps, mapDispatchToProps)(QuizCreator)
